@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind Detective</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- HOME -->
+<div id="home" class="screen active">
+
+  <div class="top">
+    <h1>🧠 MIND DETECTIVE</h1>
+    <p id="rank">Rank: Rookie</p>
+    <p id="xp">XP: 0</p>
+  </div>
+
+  <button onclick="openScreen('missions')">🕵 Missions</button>
+  <button onclick="openScreen('puzzles')">🧩 Puzzles</button>
+  <button onclick="openScreen('ai')">🤖 AI Mentor</button>
+
+</div>
+
+<!-- MISSIONS -->
+<div id="missions" class="screen">
+
+  <h2>🕵 Detective Mission</h2>
+
+  <div class="card">
+    <p id="missionText">A phone was stolen in class. 3 suspects were seen nearby.</p>
+  </div>
+
+  <button onclick="chooseMission('A')">Suspect A (Calm student)</button>
+  <button onclick="chooseMission('B')">Suspect B (Nervous student)</button>
+  <button onclick="chooseMission('C')">Suspect C (Confident student)</button>
+
+  <p id="missionResult"></p>
+
+  <button onclick="openScreen('home')">⬅ Back</button>
+
+</div>
+
+<!-- PUZZLES -->
+<div id="puzzles" class="screen">
+
+  <h2>🧩 Logic Puzzle</h2>
+
+  <div class="card">
+    <p>What comes next?</p>
+    <h3>5 → 10 → 20 → 40 → ?</h3>
+  </div>
+
+  <button onclick="solvePuzzle(true)">80</button>
+  <button onclick="solvePuzzle(false)">70</button>
+  <button onclick="solvePuzzle(false)">60</button>
+
+  <p id="puzzleResult"></p>
+
+  <button onclick="openScreen('home')">⬅ Back</button>
+
+</div>
+
+<!-- AI MENTOR -->
+<div id="ai" class="screen">
+
+  <h2>🤖 AI Mentor</h2>
+
+  <div class="card">
+    <p>Ask anything about observation, lies, psychology</p>
+  </div>
+
+  <input id="userInput" placeholder="Type here..." />
+  <button onclick="askAI()">Send</button>
+
+  <div class="card">
+    <p id="aiReply">AI waiting...</p>
+  </div>
+
+  <button onclick="openScreen('home')">⬅ Back</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
